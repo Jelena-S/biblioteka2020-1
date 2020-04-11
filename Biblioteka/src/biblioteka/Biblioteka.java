@@ -1,8 +1,16 @@
 package biblioteka;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import biblioteka.interfejs.BibliotekaInterfejs;
 
@@ -99,14 +107,34 @@ public class Biblioteka implements BibliotekaInterfejs {
 	}
 
 	@Override
-	public void sacuvajKnjige(Biblioteka biblioteka, String putanja) {
-		// TODO Auto-generated method stub
-		
+	public void sacuvajKnjige(String putanja) {
+		try(FileWriter out = new FileWriter(putanja)) {
+			Gson gson = new GsonBuilder().setPrettyPrinting().create();
+			gson.toJson(knjige, out);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
-	public void ucitajKnjige(Biblioteka biblioteka, String putanja) {
-		// TODO Auto-generated method stub
+	public void ucitajKnjige(String putanja) {
+		try(FileReader in = new FileReader(putanja)) {
+			
+			Gson gson = new Gson();
+			Type type = new TypeToken<ArrayList<Knjiga>>(){}.getType();
+			
+			knjige.clear();
+			
+			knjige = gson.fromJson(in, type);
+			
+			/*for (Knjiga knjiga : knjige) {
+				System.out.println(knjiga);
+			}*/
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 	}
 
