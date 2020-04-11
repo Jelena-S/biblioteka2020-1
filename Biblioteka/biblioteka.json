@@ -1,0 +1,30 @@
+[
+  {
+    "naslov": "Knjiga 1",
+    "isbn": "100",
+    "autori": [
+      {
+        "ime": "Ime autor 1",
+        "prezime": "Prezime autor 1"
+      },
+      {
+        "ime": "Ime autor 2",
+        "prezime": "Prezime autor 2"
+      }
+    ],
+    "izdavac": "Izdavac 1",
+    "izdanje": 1
+  },
+  {
+    "naslov": "Knjiga 2",
+    "isbn": "101",
+    "autori": [
+      {
+        "ime": "Ime autor 21",
+        "prezime": "Prezime autor 21"
+      }
+    ],
+    "izdavac": "Izdavac 2",
+    "izdanje": 2
+  }
+]
