@@ -98,4 +98,16 @@ public class Biblioteka implements BibliotekaInterfejs {
 		return rezultat;
 	}
 
+	@Override
+	public void sacuvajKnjige(Biblioteka biblioteka, String putanja) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ucitajKnjige(Biblioteka biblioteka, String putanja) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
